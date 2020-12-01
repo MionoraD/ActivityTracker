@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HWP_Monitor.Models.Main.ResultPage"
+             NavigationPage.HasNavigationBar="false">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout x:Name="TitleLayout" Margin="0,20,0,0"/>
+            
+            <StackLayout x:Name="LytIndicator"
+                         HorizontalOptions="CenterAndExpand"
+                         VerticalOptions="CenterAndExpand">
+                <ActivityIndicator x:Name="IndicatorRunning" IsRunning="true" />
+            </StackLayout>
+
+            <StackLayout x:Name="LytContent"
+                HorizontalOptions="CenterAndExpand"
+                VerticalOptions="CenterAndExpand">
+                <StackLayout x:Name="LayoutNotDone">
+                    <Label Text="Thank you!"
+                           FontSize="30"
+                           FontAttributes="Bold"
+                           HorizontalOptions="Center" />
+                    <Label 
+                        HorizontalTextAlignment="Center"
+                        HorizontalOptions="Center" 
+                        VerticalOptions="Center"
+                        WidthRequest="300">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Je hebt de activiteiten van " />
+                                <Span x:Name="Span_DaysCollected"/>
+                                <Span Text=" " />
+                                <Span x:Name="Span_DaysCollectedWords"/>
+                                <Span Text=" verzameld. In het onderzoek wordt er gevraagd om de activiteiten van " />
+                                <Span x:Name="Span_DaysNeeded" />
+                                <Span Text=" " />
+                                <Span x:Name="Span_DaysNeededWords"/>
+                                <Span Text=" te verzamelen." />
+                                <Span Text=" Over " />
+                                <Span x:Name="Span_DaysLeftToGo"/>
+                                <Span Text=" " />
+                                <Span x:Name="Span_DaysLeftToGoWords"/>
+                                <Span Text=" krijg je de resultaten te zien." />
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                </StackLayout>
+
+                <StackLayout x:Name="LayoutDone"
+                             VerticalOptions="CenterAndExpand"/>
+                
+                <Button 
+                    Style="{StaticResource button}"
+                    Text="Terug naar hoofdscherm"
+                    VerticalOptions="CenterAndExpand"
+                    HorizontalOptions="Center"
+                    Clicked="OnReturnToHome" />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

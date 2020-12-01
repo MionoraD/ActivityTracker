@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HWP_Monitor.Models.Main.ActivityListPage"
+             xmlns:local="clr-namespace:HWP_Monitor.Functions"
+             NavigationPage.HasNavigationBar="false">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout x:Name="TitleLayout"
+                    Margin="0,20,0,0"/>
+
+            <StackLayout 
+                VerticalOptions="CenterAndExpand">
+                <StackLayout x:Name="LayoutActivityList">
+                    <ScrollView
+                            VerticalOptions="FillAndExpand">
+                        <StackLayout x:Name="Activities"/>
+                    </ScrollView>
+                </StackLayout>
+                <StackLayout x:Name="LayoutChosenActivity"/>
+            </StackLayout>
+
+            <Button x:Name="Button_QuitWorkday"
+                    Style="{StaticResource button}"
+                    Text="Stop met werken"
+                    VerticalOptions="CenterAndExpand"
+                    HorizontalOptions="CenterAndExpand"
+                    Clicked="OnButtonQuitWorkdayClicked" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

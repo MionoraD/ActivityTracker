@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "884264756078",
+    "firebase_url": "https://hwpmonitor.firebaseio.com",
+    "project_id": "hwpmonitor",
+    "storage_bucket": "hwpmonitor.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:884264756078:android:07d66541b1d5d617c5977f",
+        "android_client_info": {
+          "package_name": "com.HealthyWorkplace.hwp_monitor"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "884264756078-eha5saopi3nrte64a8aiias94ko9feob.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDAtuAtHvMFmeOTzizrCi9E_SMacFBzaag"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "884264756078-eha5saopi3nrte64a8aiias94ko9feob.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

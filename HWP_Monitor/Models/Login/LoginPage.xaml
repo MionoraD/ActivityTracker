@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HWP_Monitor.Models.Login.LoginPage"
+             NavigationPage.HasNavigationBar="false">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout x:Name="TitleLayout" Margin="0,20,0,0"/>
+
+            <StackLayout
+            VerticalOptions="Center"
+            Margin="20">
+                <Image x:Name="ImgCompanyLogo"/>
+
+                <Entry
+                    Placeholder="E-mail"
+                    Keyboard="Email"
+                    x:Name="EmailInput"
+                    />
+                <Entry
+                    Placeholder="Password"
+                    IsPassword="true"
+                    x:Name="PasswordInput"
+                    />
+                <Button
+                    Text="Enter"
+                    Clicked="LoginClicked"
+                    Style="{StaticResource button}"
+                    />
+                <Label x:Name="LblRegister"
+                   Style="{StaticResource link}"
+                   Text="Click here to register"
+                   VerticalOptions="CenterAndExpand" 
+                   HorizontalOptions="CenterAndExpand" />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

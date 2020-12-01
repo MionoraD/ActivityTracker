@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HWP_Monitor.Models.Login.RegisterPage"
+             NavigationPage.HasNavigationBar="false">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout x:Name="TitleLayout" Margin="0,20,0,0"/>
+
+            <StackLayout
+            VerticalOptions="Center"
+            Margin="20">
+                <Entry
+                    Placeholder="E-mail"
+                    Keyboard="Email"
+                    x:Name="EmailInput"
+                    Completed="EntryEmail_Completed"
+                    />
+                <Entry
+                    Placeholder="Password"
+                    IsPassword="true"
+                    x:Name="PasswordInput"
+                    Completed="EntryPass_Completed"
+                    />
+                <Picker x:Name="CompanyPicker"
+                    Title="Select activiteiten lijst" />
+
+                <StackLayout x:Name="Layout_BackForward">
+                    <Button x:Name="Back"
+                            Text="Back"
+                            Style="{StaticResource button}"/>
+                    <Button x:Name="Forward"
+                            Text="Next"
+                            Style="{StaticResource button}"/>
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HWP_Monitor.Models.Main.TakingBreakPage"
+             NavigationPage.HasNavigationBar="false">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout x:Name="TitleLayout" Margin="0,20,0,0"/>
+
+            <StackLayout x:Name="LytIndicator"
+                         IsVisible="false"
+                         HorizontalOptions="CenterAndExpand"
+                         VerticalOptions="CenterAndExpand">
+                <ActivityIndicator x:Name="IndicatorRunning" IsRunning="true" />
+            </StackLayout>
+            
+            <StackLayout x:Name="LytBreak"
+                VerticalOptions="EndAndExpand"
+                Margin="0,0,0,50">
+                <Frame x:Name="Frame_Activity"
+                    Style="{StaticResource activityFrame}">
+                    <StackLayout>
+                        <StackLayout x:Name="LayoutIcon"/>
+                        <!--<Label x:Name="lblTime"
+                            Text="00:00:00"
+                            HorizontalOptions="CenterAndExpand"
+                            VerticalOptions="CenterAndExpand"
+                            FontSize="80"/>-->
+                
+                        <Label Text="Ik was bezig met;"
+                               FontSize="20"
+                               HorizontalTextAlignment="Center"/>
+                        <Label x:Name="Label_CurrentActivity"
+                               FontSize="25"
+                               FontAttributes="Bold"
+                               HorizontalTextAlignment="Center"/>
+                    </StackLayout>
+                </Frame>
+                
+                <Button
+                Style="{StaticResource button}"
+                Text="Ik ga verder waar ik mee bezig was"
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="Center"
+                Clicked="OnReturnToWork" />
+
+                <Button 
+                Style="{StaticResource button}"
+                Text="Ik ga wat anders doen"
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="Center"
+                Clicked="OnStopActivity" />
+
+                <Button 
+                Style="{StaticResource button}"
+                Text="Ik ga stoppen met werken"
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="Center"
+                Clicked="OnStopWorkday" />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

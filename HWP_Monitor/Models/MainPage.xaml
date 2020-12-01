@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:HWP_Monitor.Functions"
+             x:Class="HWP_Monitor.Models.MainPage"
+             NavigationPage.HasNavigationBar="false">
+
+    <Frame>
+        <Frame.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                <GradientStop Color="{StaticResource firstColor}" Offset="0.0"/>
+                <GradientStop Color="{StaticResource thirdColor}" Offset="0.8"/>
+            </LinearGradientBrush>
+        </Frame.Background>
+
+        <StackLayout>
+            <StackLayout x:Name="TitleLayout" Margin="0,20,0,0"/>
+
+            <StackLayout VerticalOptions="CenterAndExpand" Margin="0,50,0,0">
+                <Frame
+                HeightRequest="250"
+                WidthRequest="175"
+                HorizontalOptions="CenterAndExpand"
+                VerticalOptions="Center"
+                CornerRadius="20">
+                    <StackLayout>
+
+                        <StackLayout x:Name="LayoutLoading"
+                                VerticalOptions="CenterAndExpand"
+                                HorizontalOptions="Center">
+                            <ActivityIndicator x:Name="LoadingUser" IsRunning="true" />
+                        </StackLayout>
+
+                        <StackLayout x:Name="LayoutProcess"
+                                     VerticalOptions="EndAndExpand"
+                                     IsVisible="false">
+                            <Label 
+                                HorizontalTextAlignment="Center"
+                                HorizontalOptions="Center" 
+                                VerticalOptions="Center">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span x:Name="Span_NrWorkdaysFinished" FontSize="200"/>
+                                        <Span Text="/" FontSize="90"/>
+                                        <Span x:Name="Span_NrWorkdaysTotal" FontSize="40"/>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+
+                <Label Text="dagen activiteiten verzameld" 
+                FontSize="Title"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"/>
+            </StackLayout>
+            
+            <Frame x:Name="ButtonStartWorkday" Style="{StaticResource buttonFrame}">
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnStartWorkdayTapped" NumberOfTapsRequired="1" />
+                </Frame.GestureRecognizers>
+                <StackLayout Grid.Row="2" Orientation="Horizontal">
+                    <Label Text="Start met werken"
+                       TextColor="{StaticResource firstColor}"
+                       FontSize="20" 
+                       FontAttributes="Bold"
+                       HorizontalOptions="EndAndExpand" 
+                       VerticalOptions="CenterAndExpand"/>
+                    <Image Source="{local:ImageResource HWP_Monitor.Images.Play Icon.png}" 
+                       HorizontalOptions="StartAndExpand" 
+                       VerticalOptions="CenterAndExpand" 
+                       HeightRequest="40" 
+                       Margin="20,4,0,0"/>
+                </StackLayout>
+            </Frame>
+
+            <Button x:Name="Logout"
+                Style="{StaticResource button}"
+                Text="Log out"
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="CenterAndExpand"
+                Clicked="OnButtonLogoutClicked" />
+        </StackLayout>
+    </Frame>
+</ContentPage>
